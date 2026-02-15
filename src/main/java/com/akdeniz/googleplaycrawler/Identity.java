@@ -145,6 +145,7 @@ class Identity {
 		params.add(new BasicNameValuePair("hasPermission", "1"));
 		params.add(new BasicNameValuePair("source", "android"));
 		params.add(new BasicNameValuePair("app", "com.android.vending"));
+		params.add(new BasicNameValuePair("droidguard_results", "null"));
 		if (loc != null) {
 			params.add(new BasicNameValuePair("device_country", loc.getLanguage()));
 			params.add(new BasicNameValuePair("lang", loc.getLanguage()));
@@ -171,6 +172,7 @@ class Identity {
 			params.add(new BasicNameValuePair("service", SERVICE));
 			params.add(new BasicNameValuePair("accountType", "HOSTED_OR_GOOGLE"));
 			params.add(new BasicNameValuePair("app", "com.android.vending"));
+			params.add(new BasicNameValuePair("droidguard_results", "null"));
 			map = doPost(client, params);
 			ret.authToken = map.get("Auth");
 		}
