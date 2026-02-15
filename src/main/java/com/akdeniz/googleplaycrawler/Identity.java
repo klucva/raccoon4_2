@@ -186,6 +186,8 @@ class Identity {
 		httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
 		HttpResponse response = client.execute(httppost);
 		Map<String, String> map = parseContent(response.getEntity().getContent());
+		System.out.println(response.getStatusLine().getStatusCode());
+		System.out.println(map);
 		if (response.getStatusLine().getStatusCode() == 200) {
 			return map;
 		}
