@@ -68,10 +68,10 @@ import com.akdeniz.googleplaycrawler.misc.Base64;
  */
 public class GooglePlayAPI {
 
-	private static final String CHECKIN_URL = "https://android.clients.google.com/checkin";
-	private static final String URL_LOGIN = "https://android.clients.google.com/auth";
-	private static final String C2DM_REGISTER_URL = "https://android.clients.google.com/c2dm/register2";
-	private static final String FDFE_URL = "https://android.clients.google.com/fdfe/";
+	private static final String CHECKIN_URL = "http://android.clients.google.com/checkin";
+	private static final String URL_LOGIN = "http://android.clients.google.com/auth";
+	private static final String C2DM_REGISTER_URL = "http://android.clients.google.com/c2dm/register2";
+	private static final String FDFE_URL = "http://android.clients.google.com/fdfe/";
 	private static final String LIST_URL = FDFE_URL + "list";
 	private static final String BROWSE_URL = FDFE_URL + "browse";
 	private static final String DETAILS_URL = FDFE_URL + "details";
