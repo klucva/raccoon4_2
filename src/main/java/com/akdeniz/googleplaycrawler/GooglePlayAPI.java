@@ -11,6 +11,7 @@ import java.security.spec.RSAPublicKeySpec;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Arrays;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
@@ -68,10 +69,10 @@ import com.akdeniz.googleplaycrawler.misc.Base64;
  */
 public class GooglePlayAPI {
 
-	private static final String CHECKIN_URL = "http://android.clients.google.com/checkin";
-	private static final String URL_LOGIN = "http://android.clients.google.com/auth";
-	private static final String C2DM_REGISTER_URL = "http://android.clients.google.com/c2dm/register2";
-	private static final String FDFE_URL = "http://android.clients.google.com/fdfe/";
+	private static final String CHECKIN_URL = "https://android.clients.google.com/checkin";
+	private static final String URL_LOGIN = "https://android.clients.google.com/auth";
+	private static final String C2DM_REGISTER_URL = "https://android.clients.google.com/c2dm/register2";
+	private static final String FDFE_URL = "https://android.clients.google.com/fdfe/";
 	private static final String LIST_URL = FDFE_URL + "list";
 	private static final String BROWSE_URL = FDFE_URL + "browse";
 	private static final String DETAILS_URL = FDFE_URL + "details";
@@ -614,6 +615,8 @@ public class GooglePlayAPI {
 	 * */
 	private ResponseWrapper executeGETRequest(String path, String[][] datapost)
 			throws IOException {
+		System.out.println(path);
+		System.out.println(Arrays.deepToString(datapost));
 
 		HttpEntity httpEntity = executeGet(path, datapost,
 				getHeaderParameters(this.getToken(), null));
@@ -655,6 +658,9 @@ public class GooglePlayAPI {
 	 */
 	private HttpEntity executePost(String url, String[][] postParams,
 			String[][] headerParams) throws IOException {
+		System.out.println(url);
+		System.out.println(Arrays.deepToString(postParams));
+		System.out.println(Arrays.deepToString(headerParams));
 
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 
