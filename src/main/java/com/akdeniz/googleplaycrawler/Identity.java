@@ -42,7 +42,7 @@ import com.akdeniz.googleplaycrawler.misc.Base64;
  */
 class Identity {
 
-	private static final String LOGIN_URL = "http://android.clients.google.com/auth";
+	private static final String LOGIN_URL = "https://android.clients.google.com/auth";
 	private static final String PUBKEY = "AAAAgMom/1a/v0lblO2Ubrt60J2gcuXSljGFQXgcyZWveWLEwo6prwgi3iJIZdodyhKZQrNWp5nKJ3srRXcUW+F1BD3baEVGcmEgqaLZUNBjm057pKRI16kB0YppeGx5qIQ5QjKzsR8ETQbKLNWgRY0QRNVz34kMJR3P/LgHax/6rmf5AAAAAwEAAQ==";
 	private static final String SERVICE = "androidmarket";
 
@@ -180,6 +180,8 @@ class Identity {
 	private static Map<String, String> doPost(HttpClient client,
 			List<NameValuePair> params) throws ClientProtocolException,
 			 IOException {
+		System.out.println(LOGIN_URL);
+		for(NameValuePair pair : params) System.out.println(pair.getName() + " = " + pair.getValue());
 		HttpPost httppost = new HttpPost(LOGIN_URL);
 		httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
 		HttpResponse response = client.execute(httppost);
